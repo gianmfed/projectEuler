@@ -16,4 +16,5 @@ days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'satur
 months = []
 
 # Conta solo il numero di giorni registrando poi l'ultima domenica
-# Es. 1900 -> 365-6 / 7
+# Es. 1900 -> 365 / 7 poiché inizia con lunedì l'ultimo giorno è domenica
+# Far iniziare gli anni dal lunedì???
