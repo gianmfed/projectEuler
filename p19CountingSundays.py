@@ -14,3 +14,6 @@
 days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
 
 months = []
+
+# Conta solo il numero di giorni registrando poi l'ultima domenica
+# Es. 1900 -> 365-6 / 7
