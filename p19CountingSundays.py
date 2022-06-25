@@ -15,20 +15,28 @@ from datetime import datetime
 y = 1901
 m = 1
 d = 1
+sun_first_of_month = 0
 
 while True:
-
+    try:
+        day = datetime(y, m, d)
+    except:
+        d = 1
+        m += 1
+        if m > 12:
+            m = 1
+            y += 1
+        day = datetime(y, m, d)
     
-    day = datetime(1901, 1, d)
-    
-    
+    if day.strftime('%a') == 'Sun' and day.strftime('%d') == '01':
+        sun_first_of_month += 1
     
     d += 1
-    print(day)
-    print(day.strftime('%a'))
 
+    if day.strftime('%d') == '31' and day.strftime('%m') == '12' and day.strftime('%Y') == '2000':
+        break
 
-
+print(sun_first_of_month)
 
 # Conta solo il numero di giorni registrando poi l'ultima domenica
 # Es. 1900 -> 365 / 7 poiché inizia con lunedì l'ultimo giorno è domenica
