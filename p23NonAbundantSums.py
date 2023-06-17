@@ -9,4 +9,10 @@
 # the greatest number that cannot be expressed as the sum of two abundant numbers is less than this limit.
 
 # Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
+upper_limit = 28123
 
+for n in range(12, upper_limit):
+    #is_abundant(n)
+    print(n)
+    input() 
+    
