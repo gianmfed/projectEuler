@@ -10,7 +10,15 @@
 
 # Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
 
-###################################################
+##################################################
+##### usare piccole funzioni ############
+####### TEST PEE DIVISORI PROPI ########## usare sqrt
+n = 10
+for i in range(1, n):
+    if n % i == 0:
+         print(i)
+
+######## FINE TEST ##########
 
 upper_limit = 28123
 
