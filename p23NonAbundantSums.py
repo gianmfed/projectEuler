@@ -12,21 +12,36 @@
 
 ##################################################
 ##### usare piccole funzioni ############
-####### TEST PEE DIVISORI PROPI ########## usare sqrt
-n = 10
-for i in range(1, n):
-    if n % i == 0:
-         print(i)
 
-######## FINE TEST ##########
-
+# Importo sqrt per trovare con meno iterazioni i divisori
+from math import sqrt
 upper_limit = 28123
 
-# Trava i numeri abbondanti
+# Funzione per sapere se un numero è abbondate
+def is_abundant(n):
+    # Il numero 1 è divisore di tutti perciò già l'ho aggiunto
+    sum_of_divisors = 1
 
-for n in range(upper_limit):
-    #is_abundant(n)
-    print(n)
+    for i in range(2, int(sqrt(n))+1):
+        if n % i == 0:
+            sum_of_divisors += i
+            if i != n//i:
+                sum_of_divisors += n//i
+            print(i)
+            print(n//i)
+
+    print(f"\n\nThe sum is {sum_of_divisors}")
+
+    if sum_of_divisors > n:
+        return True
+
+
+# Trava i numeri abbondanti ed inserili in una struttura dati
+
+for n in range(12, upper_limit +1):
+    if is_abundant(n):
+
+        print(f"{n} is abundant")
     input()
 
 # Trova tutte le somme di numeri abbondanti
