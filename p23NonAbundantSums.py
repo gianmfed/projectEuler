@@ -27,26 +27,39 @@ def is_abundant(n):
             sum_of_divisors += i
             if i != n//i:
                 sum_of_divisors += n//i
-            print(i)
-            print(n//i)
-
-    print(f"\n\nThe sum is {sum_of_divisors}")
 
     if sum_of_divisors > n:
         return True
 
 
 # Trava i numeri abbondanti ed inserili in una struttura dati
-
+abundant = set()
 for n in range(12, upper_limit +1):
     if is_abundant(n):
+        abundant.add(n)
+        #print(f"{n} is abundant")
+    #input()
+print(abundant)
 
-        print(f"{n} is abundant")
-    input()
 
 # Trova tutte le somme di numeri abbondanti
+### Test per controllare la velocità
+abundant_sums = set()
+for i in abundant:
+    for j in abundant:
+        abundant_sums.add(i+j)
+        #print(f"{i} + {j}")
+        #input()
+print("finito!")
 
 # Somma tutti i numeri abbondanti
+### Non essenziale
 
 # Somma tutti i numeri e sottrai la somma di quelli abbondanti
+non_abundant_summation = 0
+for integer in range(upper_limit):
+    if integer not in abundant_sums:
+        non_abundant_summation += integer
+
+print(non_abundant_summation)
 
